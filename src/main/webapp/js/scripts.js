@@ -87,7 +87,6 @@ function checkCorrectAnswers() {
 		$.ajax({
 			type : "POST",
 			url : '/sudoku/checkCorrectAnswers',
-			// JSON.stringify(data)
 			data : JSON.stringify(matrix),
 			contentType : "application/json; charset=utf-8",
 			dataType : "json",
@@ -233,10 +232,7 @@ function resetTable() {
 			}
 		}
 	}
-	
 	resetDisplay();
-	
-	
 }
 
 

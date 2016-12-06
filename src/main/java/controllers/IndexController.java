@@ -20,6 +20,10 @@ import sudoku.logic.Sudoku;
 import sudoku.logic.SudokuManager;
 import sudoku.logic.exceptions.ConstraintViolationException;
 
+/**
+ * Spring MVC Controller
+ */
+
 @Controller
 @SessionAttributes({ "sudoku", "puzzle" })
 public class IndexController {
@@ -126,17 +130,12 @@ public class IndexController {
 	}
 
 	/**
-	 * check wheter a particular value is the correct one for a particular cell
-	 * of the puzzle
+	 * utility method to convert java object in json string object
 	 * 
-	 * @param int[][]
-	 *            matrix the matrix that represents the sudoku grid
+	 * @param Object
+	 *            object java object you need to convert
 	 * 
-	 * @param Sudoku
-	 *            sudoku the Sudoku object stored in the session
-	 * 
-	 * 
-	 * @return String return the response as json string object
+	 * @return String return the json string object
 	 */
 
 	private String toJson(Object object) {

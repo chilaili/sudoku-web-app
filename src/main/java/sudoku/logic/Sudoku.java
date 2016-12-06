@@ -2,6 +2,9 @@ package sudoku.logic;
 
 import java.io.Serializable;
 
+/**
+ * Sudoku object represents the grid 9x9 cells
+ */
 public class Sudoku implements Serializable {
 
 	private Cell[][] cells;

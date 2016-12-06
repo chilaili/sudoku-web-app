@@ -3,12 +3,17 @@ package sudoku.logic;
 import java.io.Serializable;
 import java.util.HashSet;
 
+/**
+ * Cell object rapresent the smallest part of a Sudoku
+ */
+
 public class Cell implements Serializable {
 
 	private int value;
 	private HashSet<Integer> triedValues;
 	private int row;
 	private int column;
+	// given means the value is fix and can't be change or dig-out
 	private boolean isGiven;
 
 	private static int CAPACITY = 9;
@@ -57,10 +62,6 @@ public class Cell implements Serializable {
 		triedValues.clear();
 	}
 
-	public boolean isFullyTried() {
-		return triedValues.size() == CAPACITY;
-	}
-
 	public HashSet<Integer> getTriedValues() {
 		return triedValues;
 	}
@@ -96,7 +97,6 @@ public class Cell implements Serializable {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "cell [" + row + "," + column + "] = " + value;
 	}
 
