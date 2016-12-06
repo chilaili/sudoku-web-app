@@ -124,9 +124,8 @@ public class IndexController {
 
 	@ResponseBody
 	@RequestMapping("/solvePuzzle")
-	public String solvePuzzle(@ModelAttribute("puzzle") Sudoku puzzle) {
-		manager.solve(puzzle);
-		return "{\"matrix\" : " + this.toJson(puzzle.toArray()) + "}";
+	public String solvePuzzle(@ModelAttribute("sudoku") Sudoku sudoku) {
+		return "{\"matrix\" : " + this.toJson(sudoku.toArray()) + "}";
 	}
 
 	/**
