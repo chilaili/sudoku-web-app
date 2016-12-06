@@ -55,8 +55,6 @@ function checkCell(input) {
 //send an AJAX request to solve automatically the puzzle and then fills the table
 function solvePuzzle() {
 
-	var matrix = getMatrix();
-
 	$.ajax({
 		type : "POST",
 		url : '/sudoku/solvePuzzle',
