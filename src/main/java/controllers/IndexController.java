@@ -49,7 +49,6 @@ public class IndexController {
 		Sudoku puzzle = manager.puzzle(sudoku, 33);
 
 		modelMap.addAttribute("sudoku", sudoku);
-		modelMap.addAttribute("puzzle", puzzle);
 		modelMap.addAttribute("matrix", puzzle.toArray());
 
 		return "index";
