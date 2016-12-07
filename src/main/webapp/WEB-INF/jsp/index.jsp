@@ -10,8 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Sudoku</title>
 <link rel="stylesheet" type="text/css" href="css/sudoku.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js/scripts.js"></script>
 </head>
 <body>
@@ -26,13 +25,12 @@
 			<c:forEach items="${matrix}" var="row" varStatus="rowStatus">
 				<tr class="row">
 					<c:forEach items="${row}" var="cell" varStatus="columnStatus">
-						<td class="cell"><input type="text"
-							id="matrix${rowStatus.index}${columnStatus.index}"
-							name="matrix${rowStatus.index}${columnStatus.index}"
-							maxlength="1"
-							<c:if test="${cell!=0}"> value="${cell}" readonly</c:if>
-							onkeyup="checkCell(this);"
-							onkeypress="return isNumberKey(event);" /></td>
+						<td class="cell">
+							<input type="text" id="matrix${rowStatus.index}${columnStatus.index}"
+								name="matrix${rowStatus.index}${columnStatus.index}" maxlength="1"
+								<c:if test="${cell!=0}"> value="${cell}" readonly</c:if>
+								onkeyup="checkCell(this);" onkeypress="return isNumberKey(event);" />
+						</td>
 					</c:forEach>
 				</tr>
 			</c:forEach>
@@ -40,11 +38,11 @@
 	</table>
 
 	<div id="containerButtons">
-		<input class='ph-button ph-btn-color' type="button"
-			value="check answers" id="checkAnswers" name="checkAnswers" /> <input
-			class='ph-button ph-btn-color' type="button" id="solvePuzzle"
-			name="solvePuzzle" value="solve puzzle" /> <input
-			class='ph-button ph-btn-color' type="button" id="resetter"
+		<input class='ph-button ph-btn-color' type="button" value="check answers"
+			id="checkAnswers" name="checkAnswers" />
+		<input class='ph-button ph-btn-color' type="button" id="solvePuzzle"
+			name="solvePuzzle" value="solve puzzle" />
+		<input class='ph-button ph-btn-color' type="button" id="resetter"
 			name="resetter" value="reset table" />
 		<form action="">
 			<input class='ph-button ph-btn-color' type="submit" id="newGame"
@@ -52,7 +50,8 @@
 		</form>
 		<div>
 			<input class='ph-button ph-btn-color' type="checkbox" id="helpme"
-				name="helpme" />Help Me
+				name="helpme" />
+			Help Me
 		</div>
 	</div>
 	<div id="display"></div>

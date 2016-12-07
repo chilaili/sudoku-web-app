@@ -1,9 +1,7 @@
 package controllers;
 
 import java.io.StringWriter;
-
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import sudoku.logic.Cell;
 import sudoku.logic.Sudoku;
 import sudoku.logic.SudokuManager;
@@ -25,7 +21,7 @@ import sudoku.logic.exceptions.ConstraintViolationException;
  */
 
 @Controller
-@SessionAttributes({ "sudoku", "puzzle" })
+@SessionAttributes("sudoku")
 public class IndexController {
 
 	@Resource
@@ -33,16 +29,15 @@ public class IndexController {
 
 	/**
 	 * this is the init method that generates the puzzle with 33 givens by
-	 * default
-	 *
-	 * the difference between sudoku and puzzle are sudoku is completly filled
-	 * and correct puzzle takes as template sudoku and dig out holes to generate
-	 * the puzzle
-	 * 
+	 * default.
+	 * the difference between sudoku and puzzle are:
+	 * Sudoku is completly
+	 * filled with valid solutions.
+	 * Puzzle takes as template a Sudoku and dig out holes to
+	 * generate the puzzle.
 	 * 
 	 * @param ModelMap
 	 *            spring object to store request parameters
-	 * 
 	 * @return String name of the view where spring bounds the data model and
 	 *         generates html
 	 */
@@ -65,7 +60,6 @@ public class IndexController {
 	 * 
 	 * @param int[][]
 	 *            matrix the matrix that represents the sudoku grid
-	 * 
 	 * @return String return the response as json string object
 	 */
 
@@ -88,13 +82,11 @@ public class IndexController {
 	 * of the puzzle
 	 * 
 	 * @param int[][]
-	 *            matrix the matrix that represents the sudoku grid
-	 * 
+	 *            the matrix that represents the sudoku grid
 	 * @param Sudoku
-	 *            sudoku the Sudoku object stored in the session
-	 * 
-	 * 
-	 * @return String return the response as json string object
+	 *            the Sudoku object stored in the session
+	 * @return String
+	 *         return the response as json string object
 	 */
 
 	@ResponseBody
@@ -115,10 +107,10 @@ public class IndexController {
 	 * resolve the puzzle
 	 * 
 	 * @param Sudoku
-	 *            puzzle the Sudoku puzzle object stored in the session
-	 * 
-	 * 
-	 * @return String return the solution for the puzzle as array of arrays in a
+	 *            sudoku
+	 *            the Sudoku puzzle object stored in the session
+	 * @return String
+	 *         return the solution for the puzzle as array of arrays in a
 	 *         json string object
 	 */
 
@@ -133,7 +125,6 @@ public class IndexController {
 	 * 
 	 * @param Object
 	 *            object java object you need to convert
-	 * 
 	 * @return String return the json string object
 	 */
 
